@@ -1,0 +1,1 @@
+Projeto simples para treinar o uso de JSP e banco de dados
