@@ -3,13 +3,20 @@ package com.example.firstproject.filter;
 import com.example.firstproject.conn.ConnectionUtils;
 import com.example.firstproject.utils.MyUtils;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.Collection;
 import java.util.Map;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 
 @WebFilter(filterName = "jdbcFilter", urlPatterns = {"/*"})
 public class JDBCFilter implements Filter {
@@ -18,7 +25,7 @@ public class JDBCFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
     }
 
     @Override

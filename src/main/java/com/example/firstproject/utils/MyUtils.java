@@ -14,7 +14,7 @@ public class MyUtils {
     public static final String ATT_NAME_CONNECTION = "ATTRIBUTE_FOR_CONNECTION";
     private static final String ATT_NAME_USER_NAME = "ATTRIBUTE_FOR_STORE_USER_NAME_IN_COOKIE";
 
-    //Store Connection in resquest attribute
+    //Store Connection in request attribute
     //Information stored only exist during requests
     public static void storeConnection(ServletRequest request, Connection connection) {
         request.setAttribute(ATT_NAME_CONNECTION, connection);
@@ -24,6 +24,11 @@ public class MyUtils {
     public static Connection getStoredConnection(ServletRequest request) {
         Connection connection = (Connection) request.getAttribute(ATT_NAME_CONNECTION);
         return connection;
+    }
+
+    //Store user info in Session. (On the JSP can access via ${loginedUser}
+    public static void storeLoginedUser(HttpSession httpSession, UserAccount loginedUser) {
+        httpSession.setAttribute("loginedUser", loginedUser);
     }
 
     //Get the user information stored in the session.
@@ -36,7 +41,7 @@ public class MyUtils {
     public static void storeUserCookie(HttpServletResponse response, UserAccount userAccount) {
         System.out.println("Store user cookie");
         Cookie cookieUserName = new Cookie(ATT_NAME_USER_NAME, userAccount.getUserName());
-        //1 day - Converterd to seconds
+        //1 day - Converted to seconds
         cookieUserName.setMaxAge(24 * 60 * 60);
         response.addCookie(cookieUserName);
     }
