@@ -1,5 +1,6 @@
 ## Simple project to train the use of JSP and Java logic
 
+### You need to download and configure Wildfly in Intellij Project [WildFly 26 Download](https://www.wildfly.org/downloads/)
 ### Dont forget to change the database connections in [MySQLConnUtils](src/main/java/com/example/firstproject/conn/MySQLConnUtils.java)
 ### Markdown to be improved
 
