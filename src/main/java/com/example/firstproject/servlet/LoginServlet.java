@@ -27,6 +27,15 @@ public class LoginServlet extends HttpServlet {
     //Show login page
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        //Forward to /WEB-INF/views/loginView.jsp
+        //(Users can mot access directly into JSP pages placed in WEB_INF)
+        RequestDispatcher requestDispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
+        requestDispatcher.forward(httpServletRequest,httpServletResponse);
+    }
+
+    //When the user enter userName and password and click Submit this method will be executed
+    @Override
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         String userName = httpServletRequest.getParameter("userName");
         String password = httpServletRequest.getParameter("password");
         String rememberMeStr = httpServletRequest.getParameter("rememberMe");
@@ -87,7 +96,7 @@ public class LoginServlet extends HttpServlet {
             }
 
             //Redirect to userInfo page
-            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "userInfo");
+            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/userInfo");
 
         }
     }
