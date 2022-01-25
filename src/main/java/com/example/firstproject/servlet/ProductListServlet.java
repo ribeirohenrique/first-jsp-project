@@ -46,6 +46,7 @@ public class ProductListServlet extends HttpServlet {
         requestDispatcher.forward(httpServletRequest,httpServletResponse);
     }
 
+    @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         doGet(httpServletRequest, httpServletResponse);
     }

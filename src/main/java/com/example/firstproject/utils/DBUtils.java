@@ -3,7 +3,10 @@ package com.example.firstproject.utils;
 import com.example.firstproject.bean.Product;
 import com.example.firstproject.bean.UserAccount;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +22,7 @@ public class DBUtils {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         if (resultSet.next()) {
-            String gender = resultSet.getString("Gender");
+            String gender = resultSet.getString("GENDER");
             UserAccount userAccount = new UserAccount();
             userAccount.setUserName(userName);
             userAccount.setPassword(password);
@@ -37,8 +40,8 @@ public class DBUtils {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         if (resultSet.next()) {
-            String password = resultSet.getString("Password");
-            String gender = resultSet.getString("Gender");
+            String password = resultSet.getString("PASSWORD");
+            String gender = resultSet.getString("GENDER");
             UserAccount userAccount = new UserAccount();
             userAccount.setUserName(userName);
             userAccount.setPassword(password);
@@ -55,9 +58,9 @@ public class DBUtils {
         ResultSet resultSet = preparedStatement.executeQuery();
         List<Product> list = new ArrayList<Product>();
         while (resultSet.next()) {
-            String code = resultSet.getString("Code");
-            String name = resultSet.getString("Name");
-            float price = resultSet.getFloat("Price");
+            String code = resultSet.getString("CODE");
+            String name = resultSet.getString("NAME");
+            float price = resultSet.getFloat("PRICE");
             Product product = new Product();
             product.setCode(code);
             product.setName(name);
@@ -74,8 +77,8 @@ public class DBUtils {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()) {
-            String name = resultSet.getString("Name");
-            float price = resultSet.getFloat("Price");
+            String name = resultSet.getString("NAME");
+            float price = resultSet.getFloat("PRICE");
             Product product = new Product(code, name, price);
             return product;
         }
