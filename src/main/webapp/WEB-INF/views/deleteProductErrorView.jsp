@@ -14,17 +14,13 @@
   <meta charset="UTF-8">
   <title>Delete Product</title>
 </head>
-<body>
+<body style="font-family: 'Fira Code',sans-serif">
 
-<jsp:include page="_header.jsp"/>
-<jsp:include page="_menu.jsp"/>
-
+<jsp:include page="_headerAndFooter.jsp"/>
 <h3>Delete Product</h3>
 
 <p style="color: red;">${errorString}</p>
 <a href="productList">Product List</a>
-
-<jsp:include page="_footer.jsp"/>
 
 </body>
 </html>

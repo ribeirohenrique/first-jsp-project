@@ -10,16 +10,13 @@
 <head>
     <title>User Info</title>
 </head>
-<body>
+<body style="font-family: 'Fira Code',sans-serif">
 
-<jsp:include page="_header.jsp"></jsp:include>
-<jsp:include page="_menu.jsp"></jsp:include>
+<jsp:include page="_headerAndFooter.jsp"></jsp:include>
 
 <h3>Hello: ${user.userName}</h3>
 <h2>User Name: <b>${user.userName}</b></h2>
-<br/>
 <h2>Gender: <b>${user.gender}</b></h2>
 <br/>
-<jsp:include page="_footer.jsp"></jsp:include>
 </body>
 </html>

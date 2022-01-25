@@ -1,20 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: dev
-  Date: 1/24/22
-  Time: 8:23 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8"/>
-    <title>Create Product</title>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <title>Create Product</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<jsp:include page="_header.jsp"/>
-<jsp:include page="_menu.jsp"/>
+</head>
+<body style="font-family: 'Fira Code',sans-serif">
+
+<jsp:include page="_headerAndFooter.jsp"/>
 
 <h3>Create Product</h3>
 
@@ -48,6 +46,5 @@
     </tr>
   </table>
 </form>
-<jsp:include page="_footer.jsp"/>
 </body>
 </html>

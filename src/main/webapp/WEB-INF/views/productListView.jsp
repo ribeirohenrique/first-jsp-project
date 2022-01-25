@@ -6,27 +6,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Product List</title>
-</head>
-<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<jsp:include page="_header.jsp"></jsp:include>
-<jsp:include page="_menu.jsp"></jsp:include>
+</head>
+<body style="font-family: 'Fira Code',sans-serif">
+
+<jsp:include page="_headerAndFooter.jsp"></jsp:include>
 
 <h3>Product List</h3>
 
 <p style="color: red;">${errorString}</p>
 
-<table border="1" cellpadding="5" cellspacing="1" >
+<table class="table table-striped">
+    <thead>
     <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
     </tr>
+    </thead>
+    <tbody>
     <c:forEach items="${productList}" var="product" >
         <tr>
-            <td>${product.code}</td>
+            <th scope="row">${product.code}</th>
             <td>${product.name}</td>
             <td>${product.price}</td>
             <td>
@@ -37,11 +40,8 @@
             </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
-
-<a href="createProduct" >Create Product</a>
-
-<jsp:include page="_footer.jsp"></jsp:include>
-
+<a class="btn btn-primary" href="createProduct">Create Product</a>
 </body>
 </html>
