@@ -16,13 +16,38 @@
 This is demo Simple web app using JSP, Servlet and JDBC. <br><br>
 <b>It includes the following functions:</b>
 
-<ul class="list-group list-group-numbered">
-    <li class="list-group-item">Login</li>
-    <li class="list-group-item">Storing user information in cookies</li>
-    <li class="list-group-item">Product List</li>
-    <li class="list-group-item">Create Product</li>
-    <li class="list-group-item">Edit Product</li>
-    <li class="list-group-item">Delete Product</li>
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Login</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Storing user information in cookies</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Product List</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Create Product</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Edit Product</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="panel">Delete Product</div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
